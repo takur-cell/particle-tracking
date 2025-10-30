@@ -10,7 +10,6 @@ OpenCVとNumPyを用いて，画像の前処理→粒子領域抽出→重心計
 - Python 3.8+
 - OpenCV
 - NumPy
-- Matplotlib
 - Jupyter Notebook
 
 ---
@@ -33,20 +32,9 @@ pip install -r requirements.txt
 2. Notebook を開き，セルを上から順に実行します．
 jupyter notebook particle_tracking_demo.ipynb
 
-### スクリプトで実行する場合（任意）
-python track_particles.py --input sample.jpg --output coords.csv
 
 ---
 
-## ファイル構成（例）
-|-- particle_tracking_demo.ipynb # Notebook実行例
-|-- track_particles.py # 単一画像に対して座標を出力するスクリプト（任意）
-|-- sample.jpg # テスト用画像（小さめ推奨）
-|-- requirements.txt # 必要なパッケージ
-|-- README.md
-
-
----
 
 ## 学んだこと・意識した点
 - 「現象を観察し，処理手順をモデル化し，結果を再現可能にする」ことが重要．
