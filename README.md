@@ -1,1 +1,59 @@
-# particle-tracking
+# Particle Tracking Demo
+
+本リポジトリは，実験画像中の微粒子位置を検出し，座標として出力するための簡易的な粒子追跡処理のデモです．
+OpenCVとNumPyを用いて，画像の前処理→粒子領域抽出→重心計算という流れで処理を行っています．
+研究で用いている粒子追跡処理を，理解しやすい形で再構成したものです．
+
+---
+
+## 使用技術
+- Python 3.8+
+- OpenCV
+- NumPy
+- Matplotlib
+- Jupyter Notebook
+
+---
+
+## 処理の流れ
+1. 画像の読み込み
+2. グレースケール・平滑化によるノイズ低減
+3. 二値化または適応的閾値による粒子領域抽出
+4. 輪郭検出
+5. 粒子領域の重心計算
+6. 座標の表示または保存（CSVなど）
+
+---
+
+## 実行方法
+
+### Notebookで確認する場合
+1. 必要なライブラリをインストールします
+pip install -r requirements.txt
+2. Notebook を開き，セルを上から順に実行します．
+jupyter notebook particle_tracking_demo.ipynb
+
+### スクリプトで実行する場合（任意）
+python track_particles.py --input sample.jpg --output coords.csv
+
+---
+
+## ファイル構成（例）
+|-- particle_tracking_demo.ipynb # Notebook実行例
+|-- track_particles.py # 単一画像に対して座標を出力するスクリプト（任意）
+|-- sample.jpg # テスト用画像（小さめ推奨）
+|-- requirements.txt # 必要なパッケージ
+|-- README.md
+
+
+---
+
+## 学んだこと・意識した点
+- 「現象を観察し，処理手順をモデル化し，結果を再現可能にする」ことが重要．
+- 粒子検出はノイズ・輝度条件に依存するため，前処理パラメータの調整が性能に直結する．
+- 処理結果を座標データとして出力することで，後段の解析に応用できる．
+
+---
+
+## 注意事項
+- 本デモは教育目的の簡易実装であり，実験環境や粒子径が変化する場合は閾値や前処理の調整が必要です．
